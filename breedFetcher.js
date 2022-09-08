@@ -8,7 +8,10 @@ request(`https://api.thecatapi.com/v1/breeds/${key}`, (error, response, body) =>
     console.log('Breed is not found');
     return;
   }
+  if (error){
   console.log('error:', error);
+  }
+  
   const data = JSON.parse(body);
   console.log(data.description);
 });
